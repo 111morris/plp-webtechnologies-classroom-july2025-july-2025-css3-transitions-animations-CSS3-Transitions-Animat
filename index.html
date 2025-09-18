@@ -1,16 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Morris' assignment</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Animations & Functions — Mini Project</title>
+<!-- Google font (allowed) -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-		<h1>Morris Mulandi assignment on Interactive Animation Demo</h1> 
-		<button id="animateBtn">Animate Box</button> 
-		<div id="box"></div> 
+<main class="app">
+<header class="hero">
+<div class="hero-inner">
+<h1 class="title">Motion & Functions</h1>
+<p class="subtitle">A tiny playground showing CSS animations and reusable JavaScript functions.</p>
+<p class="desc">Click the buttons below to trigger animations — a rotating box, a flipping card, and a modal with a loader. Fully responsive and accessible.</p>
+<div class="controls">
+<button id="animateBtn" class="btn primary">Animate Box</button>
+<button id="flipBtn" class="btn">Flip Card</button>
+<button id="modalBtn" class="btn ghost">Show Modal (with loader)</button>
+<button id="themeToggle" class="btn small">Toggle Theme</button>
+</div>
+</div>
+</header>
 
-		<script src="script.js"></script>
-		
+
+<section class="stage">
+<div class="card-grid">
+<div class="anim-card">
+<div id="box" class="box" aria-hidden="true"></div>
+<p class="label">Rotating & Scaling Box</p>
+</div>
+
+
+<div class="flip-wrap">
+<div id="flipCard" class="flip-card" tabindex="0" aria-label="Flippable card">
+<div class="flip-front">Hello 👋<span class="small">(click to flip)</span></div>
+<div class="flip-back">Surprise! 🎉</div>
+</div>
+<p class="label">Flip Card</p>
+</div>
+
+
+<div class="status-card">
+<div id="status" class="status">Idle</div>
+<p class="label">Animated Status</p>
+</div>
+</div>
+</section>
+
+
+<!-- Modal (hidden by default) -->
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+<div class="modal-panel">
+<button id="closeModal" class="close" aria-label="Close modal">✕</button>
+<h2>Processing</h2>
+<p>We are performing a quick animation — this simulates an async task.</p>
+<div class="loader" id="loader" aria-hidden="true">
+<div class="dot d1"></div>
+<div class="dot d2"></div>
+<div class="dot d3"></div>
+</div>
+<button id="doneBtn" class="btn primary">Finish Now</button>
+</div>
+</div>
+
+
+<footer class="foot">
+<small>Built with vanilla HTML, CSS, and JS • Accessible & responsive</small>
+</footer>
+</main>
+
+
+<script src="script.js"></script>
 </body>
 </html>
